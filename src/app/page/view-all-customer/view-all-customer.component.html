@@ -1,0 +1,26 @@
+<app-nav></app-nav>
+
+<h1 class="text-center mb-4 bg-info p-4 text-white fw-folder">View All Customer</h1>
+
+<div class="container">
+    <table class="table border">
+        <tr class="border text-center bg-black text-white">
+            <th>Count</th> 
+            <th>ID</th> 
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>  
+            <th>Role</th>
+            <th></th>
+        </tr>
+        <tr class="border text-center" *ngFor="let customer of customerList; index as i">
+            <td>{{i+1}}</td>
+            <td>{{"CUS#000"+customer.id}}</td>
+            <td>{{customer.firstName+" "+customer.lastName}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.departmentId}}</td>
+            <td>{{customer.roleId}}</td>
+            <td><button class="btn btn-danger" (click)="deleteCustomer(customer)"><i class="bi bi-trash3-fill"></i></button></td>
+        </tr>
+    </table> 
+</div>
